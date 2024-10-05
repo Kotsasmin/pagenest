@@ -6,12 +6,19 @@ export const Images = () => {
             <div className="flex items-center">
                 <div className="relative w-[400px] h-[400px] hidden sm:block">
                     <Image 
-                        src="/hello-d.png"
+                        src="/notebook.svg"
                         fill
-                        className="object-contain"
+                        className="object-contain dark:hidden"
+                        alt="Hello"
+                    />
+                                        <Image 
+                        src="/notebook.svg"
+                        fill
+                        className="object-contain dark:block"
                         alt="Hello"
                     />
                 </div>
+                
             </div>
         </div>
     );
