@@ -8,7 +8,7 @@ const Layout = ({
 }) => {
 
     return ( 
-        <div className="h-full dark:bg-[#161616]">
+        <div className="h-full ">
             <Navbar />
             <main className="h-full pt-40">
                 {children}
