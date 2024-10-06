@@ -12,7 +12,7 @@ export const Heading = () => {
             PageNest is the connected workspace where<br/> collaboration thrives and productivity soars.
             </h3>
             <Button>
-                Get started!
+                Get started for free!
                 <ArrowRight className="ml-2 w-4 h-4">
                 </ArrowRight>
             </Button>
