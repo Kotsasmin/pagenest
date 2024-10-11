@@ -5,7 +5,7 @@ const DocumentIdPage = () => {
  
     return (
       <div>
-
+        Soon
       </div>
     );
   }
