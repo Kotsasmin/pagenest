@@ -12,12 +12,13 @@ import { api } from "@/convex/_generated/api";
 import { Item } from "./item";
 import { toast } from "sonner";
 import { DocumentList } from "./document-list";
-
+import { useSearch } from "@/hooks/use-search";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
 
 
 export const Navigation = () => {
+    const search = useSearch();
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -143,7 +144,7 @@ className={cn("h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dar
                label="Search"
                icon={Search}
                isSearch
-               onClick={() => {}}/>
+               onClick={search.onOpen}/>
                <Item
                label="Settings"
                icon={Settings}
