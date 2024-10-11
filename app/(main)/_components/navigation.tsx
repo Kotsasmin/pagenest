@@ -15,10 +15,11 @@ import { DocumentList } from "./document-list";
 import { useSearch } from "@/hooks/use-search";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
-
+import { useSettings } from "@/hooks/use-settings";
 
 export const Navigation = () => {
     const search = useSearch();
+    const settings = useSettings();
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -148,7 +149,7 @@ className={cn("h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dar
                <Item
                label="Settings"
                icon={Settings}
-               onClick={() => {}}/>
+               onClick={settings.onOpen}/>
                <Item onClick={handleCreate} label="New page" icon={PlusCircle}/>
             </div>
             <div className="mt-4">
