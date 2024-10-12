@@ -12,7 +12,7 @@ export const Images = () => {
                 <div className="relative w-full h-auto sm:w-[400px] sm:h-[400px]">
                     <Accordion type="single" collapsible className="mt-4">
                         <AccordionItem value="item-1">
-                            <AccordionTrigger>What is the note-taking app?</AccordionTrigger>
+                            <AccordionTrigger>What is PageNest?</AccordionTrigger>
                             <AccordionContent>
                                 It is a simple yet powerful app for managing and organizing your notes effortlessly.
                             </AccordionContent>
@@ -27,6 +27,12 @@ export const Images = () => {
                             <AccordionTrigger>Can I sync my notes across devices?</AccordionTrigger>
                             <AccordionContent>
                                 Absolutely. You can sync your notes across multiple devices in real-time with our cloud integration.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-4">
+                            <AccordionTrigger>Is it free?</AccordionTrigger>
+                            <AccordionContent>
+                                Yes, PageNest is completely free to use. However, due to limited resources, each user is allocated a certain amount of storage and features.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
