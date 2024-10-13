@@ -4,7 +4,7 @@ import { UploadCloudIcon, X } from "lucide-react";
 import * as React from "react";
 import { useDropzone, type DropzoneOptions } from "react-dropzone";
 import { twMerge } from "tailwind-merge";
-
+import Image from "next/image"; // <-- Import Image component from Next.js
 import { Spinner } from "./spinner";
 
 const variants = {
@@ -50,10 +50,10 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const imageUrl = React.useMemo(() => {
       if (typeof value === "string") {
-        // in case a url is passed in, use it to display the image
+        // in case a URL is passed in, use it to display the image
         return value;
       } else if (value) {
-        // in case a file is passed in, create a base64 url to display the image
+        // in case a file is passed in, create a base64 URL to display the image
         return URL.createObjectURL(value);
       }
       return null;
@@ -141,11 +141,12 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
           <input ref={ref} {...getInputProps()} />
 
           {imageUrl ? (
-            // Image Preview
-            <img
+            // Image Preview (Use Next.js Image component)
+            <Image
               className="h-full w-full rounded-md object-cover"
               src={imageUrl}
-              alt={acceptedFiles[0]?.name}
+              alt={acceptedFiles[0]?.name || "Uploaded image"} // Provide a fallback alt text
+              layout="fill" // Ensures the image fills the available space
             />
           ) : (
             // Upload Icon
@@ -184,28 +185,6 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
   },
 );
 SingleImageDropzone.displayName = "SingleImageDropzone";
-
-const Button = React.forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ className, ...props }, ref) => {
-  return (
-    <button
-      className={twMerge(
-        // base
-        "inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-        // color
-        "border border-gray-400 text-gray-400 shadow hover:bg-gray-100 hover:text-gray-500 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-700",
-        // size
-        "h-6 rounded-md px-2 text-xs",
-        className,
-      )}
-      ref={ref}
-      {...props}
-    />
-  );
-});
-Button.displayName = "Button";
 
 function formatFileSize(bytes?: number) {
   if (!bytes) {
