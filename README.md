@@ -42,7 +42,7 @@ To set up and run **PageNest** on your local machine, follow these steps:
 
 1. **Clone the Repository**
     ```bash
-    git clone soon
+    git clone https://github.com/Kotsasmin/pagenest.git
     cd pagenest
     ```
 
