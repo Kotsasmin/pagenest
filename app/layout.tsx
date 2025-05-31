@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: "An All-in-One note talking solution",
 
     icons: {
-      icon: '/icon.png',
+      icon: './public/icon.png',
     },
 
   
