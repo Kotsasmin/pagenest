@@ -32,7 +32,7 @@ export const Images = () => {
                         <AccordionItem value="item-4">
                             <AccordionTrigger>Is it free?</AccordionTrigger>
                             <AccordionContent>
-                                Yes, PageNest is completely free to use. However, due to limited resources, each user is allocated a certain amount of storage and features.
+                                Yes, PageNest is completely free to use; however, due to limited resources, each user is allocated a certain amount of storage and features, the notes database resets every 24 hours, and images are not displayed to reduce bandwidth usage.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
