@@ -5,7 +5,13 @@ import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import { Navigation } from "./_components/navigation";
 import { SearchCommand } from "@/components/search-command";
-
+export const metadata = {
+  title: 'PageNest',
+  description: 'An All-in-One note talking solution',
+  icons: {
+    icon: '/icon.png',
+  },
+};
 
 const MainLayout = ({
     children
