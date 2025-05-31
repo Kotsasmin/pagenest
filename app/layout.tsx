@@ -22,6 +22,12 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "PageNest",
   description: "An All-in-One note talking solution",
+
+    icons: {
+      icon: '/icon.png',
+    },
+
+  
 };
 
 export default function RootLayout({
