@@ -1,9 +1,8 @@
-import 'dotenv/config'; // loads environment variables from .env file
-import { initEdgeStore } from '@edgestore/server';
-import { initEdgeStoreClient } from '@edgestore/server/core';
+/* eslint-disable @typescript-eslint/no-require-imports */
+const { initEdgeStore } = require('@edgestore/server');
+const { initEdgeStoreClient } = require('@edgestore/server/core');
 
 async function main() {
-  // Just check that the env vars exist, but do NOT pass to create()
   if (!process.env.EDGE_STORE_ACCESS_KEY || !process.env.EDGE_STORE_SECRET_KEY) {
     throw new Error('Missing EDGE_STORE_ACCESS_KEY or EDGE_STORE_SECRET_KEY environment variables');
   }
