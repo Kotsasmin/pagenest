@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { v } from "convex/values";
 
-import { mutation, query } from "./_generated/server";
+import { mutation, query, internalMutation } from "./_generated/server";
 import { Doc, Id } from "./_generated/dataModel";
 import { normalize } from "path";
+
 
 export const archive = mutation({
     args: { id: v.id("documents") },
@@ -390,3 +392,17 @@ export const getSearch = query({
       return document;
     },
   });
+
+
+
+export const clearAll = internalMutation({
+  handler: async (ctx) => {
+    const allDocuments = await ctx.db.query("documents").collect();
+
+    for (const doc of allDocuments) {
+      await ctx.db.delete(doc._id);
+    }
+
+    return { deletedCount: allDocuments.length };
+  },
+});
